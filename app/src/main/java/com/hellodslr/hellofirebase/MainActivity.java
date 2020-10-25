@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
 //                rootDatabaseref.child(key).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
 
                 // 현재는 기본적인 기능구현만
+
                 rootDatabaseref.child("user1").setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
