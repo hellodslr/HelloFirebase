@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 hashMap.put("ID", id);
                 hashMap.put("Name", name);
 
-                // rootDatabaseref 고유 ey값을 받아서 넘겨줌
+                // rootDatabaseref 고유 key값을 받아서 넘겨줌
 //                String key = rootDatabaseref.push().getKey();
 //                rootDatabaseref.child(key).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
 
