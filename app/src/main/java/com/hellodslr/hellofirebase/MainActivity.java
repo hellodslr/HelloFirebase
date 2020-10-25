@@ -46,37 +46,6 @@ public class MainActivity extends AppCompatActivity {
 
         rootDatabaseref = FirebaseDatabase.getInstance().getReference().child("Users");
 
-        btnRead.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-//                rootDatabaseref.child("user1").addValueEventListener(new ValueEventListener() {
-
-                rootDatabaseref.child("user1").addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if (snapshot.exists()) {
-
-                            Map<String, Object> map = (Map<String, Object>) snapshot.getValue();
-                            Object id = map.get("ID");
-                            String name = (String) map.get("Name");
-
-                            textView.setText("" + id);
-                            textView2.setText(name);
-
-                        }
-
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-
-            }
-        });
-
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
                 HashMap hashMap = new HashMap();
                 hashMap.put("ID", id);
                 hashMap.put("Name", name);
+
+                // rootDatabaseref 고유 ey값을 받아서 넘겨줌
+//                String key = rootDatabaseref.push().getKey();
+//                rootDatabaseref.child(key).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+
 
                 rootDatabaseref.child("user1").setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -98,6 +72,36 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Sorry!!, Permission Denied", Toast.LENGTH_SHORT).show();
                     }
                 });
+            }
+        });
+
+        btnRead.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                addValueEventListener 실행 후 데이터를 실시간 체크하여 가져 옴
+//                rootDatabaseref.child("user1").addValueEventListener(new ValueEventListener() {
+
+//                addListenerForSingleValueEvent 실행 할때만 데이터를 읽어 옴
+                rootDatabaseref.child("user1").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.exists()) {
+
+                            Map<String, Object> map = (Map<String, Object>) snapshot.getValue();
+                            Object id = map.get("ID");
+                            String name = (String) map.get("Name");
+
+                            textView.setText("" + id);
+                            textView2.setText(name);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
             }
         });
 
