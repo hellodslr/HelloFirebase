@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "411509428974",
+    "firebase_url": "https://group-h-firebase.firebaseio.com",
+    "project_id": "group-h-firebase",
+    "storage_bucket": "group-h-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411509428974:android:73cf1f1236e20d2d1919ff",
+        "android_client_info": {
+          "package_name": "com.hellodslr.hellofirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411509428974-5qoji912ct01fi4tvpuogd2s4cphm747.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hellodslr.hellofirebase",
+            "certificate_hash": "ba7879bf37ee6f8952398d03f46d13d3b85865db"
+          }
+        },
+        {
+          "client_id": "411509428974-nv7jdcqkbmguvnec2feaf00aevq6daqm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAmmgcp20mQE0_DPqEISvJJBc_Y2qPrUQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411509428974-nv7jdcqkbmguvnec2feaf00aevq6daqm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
